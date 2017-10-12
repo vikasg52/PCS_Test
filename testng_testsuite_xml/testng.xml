@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PCS_Test_Suite">
+  <test name="UI_Login_Test">
+      <parameter name="browser" value="chrome"/>
+      <parameter name="URL" value="https://www.makaan.com"/>
+        <classes>
+      <class name="pcs.pom.testSuites.Login_TestSuite"/>
+         </classes>
+  </test> <!-- UI Login_Test -->
+  <test name="API_Test"> 
+      <classes>
+       <class name="pcs.api.Api_Param"/>
+       </classes>
+      </test> <!-- API test finished -->
+</suite> <!-- PCS_Test_Suite -->

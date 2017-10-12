@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="pcs.api.Api_Param">
+        <methods>
+          <include name="Get_With_Param" invocation-numbers="2 4"/>
+          <include name="getResult"/>
+          <include name="closeDriver"/>
+          <include name="Api_setUp"/>
+        </methods>
+      </class> <!-- pcs.api.Api_Param -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

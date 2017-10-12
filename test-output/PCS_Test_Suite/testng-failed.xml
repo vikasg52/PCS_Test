@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PCS_Test_Suite]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="URL" value="https://www.makaan.com"/>
+  <test name="UI_Login_Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="URL" value="https://www.makaan.com"/>
+    <classes>
+      <class name="pcs.pom.testSuites.Login_TestSuite">
+        <methods>
+          <include name="Login_Test" invocation-numbers="0 6 7"/>
+          <include name="getResult"/>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- pcs.pom.testSuites.Login_TestSuite -->
+      <class name="pcs.api.Api_Param">
+        <methods>
+          <include name="getResult"/>
+          <include name="closeDriver"/>
+          <include name="Api_setUp"/>
+        </methods>
+      </class> <!-- pcs.api.Api_Param -->
+    </classes>
+  </test> <!-- UI_Login_Test(failed) -->
+  <test name="API_Test(failed)">
+    <classes>
+      <class name="pcs.pom.testSuites.Login_TestSuite">
+        <methods>
+          <include name="getResult"/>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- pcs.pom.testSuites.Login_TestSuite -->
+      <class name="pcs.api.Api_Param">
+        <methods>
+          <include name="Get_With_Param" invocation-numbers="2 4"/>
+          <include name="getResult"/>
+          <include name="closeDriver"/>
+          <include name="Api_setUp"/>
+        </methods>
+      </class> <!-- pcs.api.Api_Param -->
+    </classes>
+  </test> <!-- API_Test(failed) -->
+</suite> <!-- Failed suite [PCS_Test_Suite] -->

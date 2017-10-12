@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name= "PCS POM Framework" basedir="." default="TestExecution" >
+	<property name="src.dir" value="src" />
+	    <property name="jars.dir" value="jars" />
+	    <property name="build.dir" value="build" />
+	    <property name="classes.dir" value="classes" />
+	     <property name="suite.dir" value="suite" />
+	    
+	    <!-- Class-Path -->
+	    <path id="classpath">
+	        <pathelement location="${classes.dir}"/>
+	        <fileset dir="${jars.dir}" includes="*.jar"/>
+	    </path>
+	    
+	    <!-- Delete directories that are not needed -->
+	            <target name="delete-dir" >
+	            <delete dir="${build.dir}"/>
+	            <delete dir="${classes.dir}"/>
+	            <echo> /* Deleted existing Compiled Directory Classes */ </echo>
+	    </target>
+	    
+	    <!-- Create Directories -->
+	    <target name="create-source-dir" depends="delete-dir">
+	        <mkdir dir="${classes.dir}"/>      
+	        <echo> /* Created Directories */ </echo>
+	    </target>
+	    
+	    <!-- Compiling Tests -->
+	    <target name="compile-classes" depends="create-source-dir">
+	        <javac destdir="${classes.dir}" includeantruntime="false" debug="true" srcdir="${src.dir}">
+	            <classpath refid="classpath"/>
+	        </javac>
+	        <echo> /* Compiled Directory Classes */ </echo>
+	    </target>
+	    
+<!-- Running Tests and TestNG report generation -->
+	    <target name="TestExecution" depends="compile-classes">
+	       <taskdef resource="testngtasks" classpathref="classpath"/>
+	        <testng classpathref="classpath" haltOnfailure="false">
+	         <xmlfileset dir="." includes="testng_testsuite_xml/testng.xml" />
+	        </testng>
+	           <echo> /* Run Directory Classes */ </echo>
+            </target>
+	</project>
